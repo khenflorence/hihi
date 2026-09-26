@@ -66,53 +66,6 @@
         
         .signature { font-style: italic; text-align: left; }
         .signature span { color: #ff4d4d; font-weight: bold; }
-
-        .heart-main { font-size: 80px; margin: 20px; animation: beat 1s infinite; filter: drop-shadow(0 0 20px #ff4d4d); }
-        @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-        }
-
-        .button-container { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px; 
-            align-items: center; 
-            min-height: 300px;
-        }
-
-        #yesBtn {
-            background-color: #ff4d4d;
-            border: none;
-            color: white;
-            padding: 15px 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        #noBtn {
-            background: none;
-            border: 1px solid #854a4a;
-            color: #f5e6e6;
-            padding: 8px 25px;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        #successScreen {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: #2c0a0a;
-            z-index: 1000;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
     </style>
 </head>
 <body>
@@ -131,66 +84,9 @@
             <p>I'm sharing all of this simply because I want to be honest with you, without putting any pressure or expectations on you. I completely respect whatever you feel, even if you don't feel the same way.</p>
             <p>More than anything, I just wanted to finally get this off my chest and express my feelings seriously, without joking (except for that Jana part earlier!). Whatever happens, I will keep admiring you and wishing you the absolute best in everything you do. Thank you for existing and giving me butterflies. Please remember that you will always have someone here who supports you and is proud of you.</p>
             <div class="divider"></div>
-            <p class="signature">Forever yours,<br><span>Love love</span> 🌷</p>
+            <p class="signature">Love,<br><span>Aki</span> 🌷</p>
         </div>
     </section>
 
-    <section id="questionArea">
-        <p style="letter-spacing: 1px; opacity: 0.9;">Because this heart only beats for you, Ry 🌷</p>
-        <div class="heart-main">❤️</div>
-        <div class="button-container">
-            <button id="yesBtn">YES YES YES!! 🌷💖</button>
-            <button id="noBtn">NO</button>
-        </div>
-    </section>
-
-    <div id="successScreen">
-        <h1 style="color: #ff4d4d;">SHE SAID YES! 🥳</h1>
-        <p>You've made this the best day ever, Ry.</p>
-        <p style="font-size: 0.9rem; opacity: 0.6;">— I will always be here to support you 🌷</p>
-    </div>
-
-    <script>
-        const noBtn = document.getElementById('noBtn');
-        const yesBtn = document.getElementById('yesBtn');
-        const successScreen = document.getElementById('successScreen');
-        
-        let noCount = 0;
-        let yesSize = 1;
-
-        const phrases = [
-            "NO",
-            "Are you sure? 🥺",
-            "Please say yes... 🌷",
-            "Please say say say! ✨",
-            "PLEASE JUST CLICK ME ❤️",
-            "I'm getting bigger!",
-            "You have no choice now lol"
-        ];
-
-        noBtn.addEventListener('mouseover', () => {
-            noCount++;
-            
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-            noBtn.style.position = 'fixed';
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-
-            yesSize += 0.4;
-            yesBtn.style.transform = `scale(${yesSize})`;
-
-            if (noCount === 3) yesBtn.innerText = "Please say say say! 🌷";
-            if (noCount >= 5) yesBtn.innerText = "PLEASE JUST CLICK ME ❤️";
-            
-            if (noCount < phrases.length) {
-                noBtn.innerText = phrases[noCount];
-            }
-        });
-
-        yesBtn.addEventListener('click', () => {
-            successScreen.style.display = 'flex';
-        });
-    </script>
 </body>
 </html>
